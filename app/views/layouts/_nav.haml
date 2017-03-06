@@ -1,0 +1,20 @@
+%nav
+  .container
+    .image-container
+      = image_tag "logo.png", class: "logo"
+    .button-container
+      %button.mobile-button
+    .list-container
+      %ul
+        %li
+          = link_to "Inicio", root_path, class: "link"
+        - if user_signed_in?
+          %li
+            = link_to "Editar perfil", edit_user_registration_path(current_user), class: "link"
+          %li
+            = link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "link"
+        - else
+          %li
+            = link_to "Ingresar", new_user_session_path, class: "link"
+          %li
+            = link_to "Registrarse", new_user_registration_path, class: "link"

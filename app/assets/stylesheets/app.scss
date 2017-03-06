@@ -1,0 +1,124 @@
+// @import "bootstrap";
+@import "vendor/normalize";
+
+header {
+  width: 100%;
+  position: relative;
+  background: #FFF;
+  display: block;
+  border-bottom: 2px solid #27a2db;
+}
+
+nav {
+  .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .image-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    width: 40px;
+    margin: .5em;
+  }
+
+  .button-container {
+    display: inline-block;
+    float: right;
+    line-height: 4em;
+    height: 4em;
+    margin-right: .5em;
+  }
+
+  button {
+    background-color: transparent;
+		border: 0;
+		border-bottom: .30em solid #707373;
+		border-top: .30em solid #707373;
+    cursor: pointer;
+		font-size: 1.2em;
+		height: 1.5em;
+		padding: .5em;
+		outline: 0;
+		position: relative;
+		width: 2em;
+		vertical-align: middle;
+    &::after,
+		&::before {
+      border-bottom: .30em solid #707373;
+      bottom: .375em;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .list-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // background: #fff;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 4.3em;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    width: 80%;
+    left: -90%;
+    transition: .3s;
+    box-shadow: 5px 0 5px -3px rgba(50, 50, 50, 0.61);
+    &.isActive {
+      left: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+		padding: 0;
+		margin: 0;
+		display: block;
+		height: 130%;
+  }
+
+  li {
+    display: block;
+		text-align: center;
+		border-bottom: 1px solid #333;
+    &:hover {
+      background: rgba(0, 0, 0, .9);
+    }
+  }
+
+  .link {
+    text-decoration: none;
+		font-size: 1em;
+		color: #FFF;
+		display: block;
+		cursor: pointer;
+		padding: 1em 0;
+    &:hover {
+      color: #27a2db;
+    }
+  }
+}
+
+.isActive {
+  border-color: transparent;
+  &::after,
+  &::before {
+    transition: transform 200ms ease-out;
+  }
+  &::after {
+    transform: rotateZ(45deg);
+  }
+  &::before {
+    transform: rotateZ(-45deg);
+  }
+}
